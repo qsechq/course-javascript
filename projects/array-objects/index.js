@@ -10,8 +10,8 @@
    forEach([1, 2, 3], (el) => console.log(el))
  */
 function forEach(array, fn) {
-  for (const array2 of array) {
-    return array2;
+  for (let i = 0; i < array.length; i++) {
+    fn(array[i], i, array);
   }
 }
 
@@ -42,11 +42,9 @@ function map(array, fn) {
    reduce([1, 2, 3], (all, current) => all + current) // 6
  */
 function reduce(array, fn, initial) {
-  let sum = 0;
-  for (sum of arguments) {
-    sum += arguments;
+  for (let i = 0; i < array.length; i++) {
+    fn(array[i]);
   }
-  return sum;
 }
 
 /*
