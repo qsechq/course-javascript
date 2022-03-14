@@ -33,7 +33,7 @@ function map(array, fn) {
 }
 
 /*
- Задание 3:
+  
 
  Напишите аналог встроенного метода reduce для работы с массивами
  Посмотрите как работает reduce и повторите это поведение для массива, который будет передан в параметре array
@@ -43,7 +43,7 @@ function map(array, fn) {
  */
 function reduce(array, fn, initial) {
   for (let i = 0; i < array.length; i++) {
-    fn(array[i]);
+    return fn(array[i] + initial);
   }
 }
 
