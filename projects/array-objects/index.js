@@ -26,8 +26,8 @@ function forEach(array, fn) {
  */
 function map(array, fn) {
   const arr = [];
-  for (let i = 0; i < arr.length; i++) {
-    arr.push(fn(arr[i], i, array));
+  for (let i = 0; i < array.length; i++) {
+    arr[i] = fn(array[i], i, array);
   }
   return arr;
 }
@@ -42,9 +42,13 @@ function map(array, fn) {
    reduce([1, 2, 3], (all, current) => all + current) // 6
  */
 function reduce(array, fn, initial) {
-  for (let i = 0; i < array.length; i++) {
-    return fn(array[i] + initial);
+  let sum = initial || array[0],
+    i = initial ? 0 : 1;
+
+  for (; i < array.length; i++) {
+    sum = fn(sum, array[i], i, array);
   }
+  return sum;
 }
 
 /*
