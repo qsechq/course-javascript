@@ -42,9 +42,8 @@ function map(array, fn) {
    reduce([1, 2, 3], (all, current) => all + current) // 6
  */
 function reduce(array, fn, initial) {
-  let sum = initial || array[0],
-    i = initial ? 0 : 1;
-
+  let sum = array[0];
+  let i = initial;
   for (; i < array.length; i++) {
     sum = fn(sum, array[i], i, array);
   }
