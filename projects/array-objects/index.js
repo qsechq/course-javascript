@@ -42,9 +42,19 @@ function map(array, fn) {
    reduce([1, 2, 3], (all, current) => all + current) // 6
  */
 function reduce(array, fn, initial) {
-  let sum = array[0];
-  let i = initial;
-  for (; i < array.length; i++) {
+  let initialValue = typeof initial !== "undefind";
+  let sum="";
+  let i="";
+
+  if(initialValue!=='undefind'){
+    sum=initial;
+    i=0;
+  }else{
+    sum=array[0];
+    i=1;
+  };
+
+  for ( ; i < array.length; i++) {
     sum = fn(sum, array[i], i, array);
   }
   return sum;
