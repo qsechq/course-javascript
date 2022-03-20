@@ -20,7 +20,7 @@ function isAllTrue(array, fn) {
   let yes = 0;
   let no = 0;
 
-  if (array.length === 0 || array instanceof Array) {
+  if (array.length === 0 || !(array instanceof Array)) {
     throw new Error('empty array');
   } else if (typeof fn != 'function') {
     throw new Error('fn is not a function');
@@ -59,7 +59,7 @@ function isAllTrue(array, fn) {
 function isSomeTrue(array, fn) {
   let yes = 0;
 
-  if (array.length === 0 || array instanceof Array) {
+  if (array.length === 0 || !(array instanceof Array)) {
     throw new Error('empty array');
   } else if (typeof fn != 'function') {
     throw new Error('fn is not a function');
