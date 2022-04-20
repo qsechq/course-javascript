@@ -9,3 +9,4 @@
 3. С помощью "cd" дойти до папки "server";
 4. В папке "server" прописать node.index js;
 5. Открыть новый терминал и прописать npm start;
+6. зайти http://localhost:8080/mega-chat-3;
