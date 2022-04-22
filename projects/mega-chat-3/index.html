@@ -28,6 +28,7 @@
       margin-bottom: 20px;
       display: flex;
       align-items: center;
+      flex-direction: column;
   }
 
   .user-name {
@@ -145,6 +146,88 @@
       font-size: 12px;
   }
 
+  body, html {
+  position: relative;
+  height: 100%;
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 473px;
+  right: 0;
+  bottom: 312px;
+  background: rgba(00, 00, 00, .2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  width: 0;
+}
+
+.modal-container {
+  position: relative;
+}
+
+.content {
+  width: 400px;
+  background: #444;
+  border-radius: 5px;
+  padding: 10px;
+  color: #fff;
+  margin: 0;
+}
+
+
+
+.close {
+  color: #fff;
+  position: absolute;
+  right: -5px;
+  top: -10px;
+  background: #d00;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+
+}
+
+.close:hover {
+  background: #d33;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  background: #a492e6;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 18px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.img-arrow{
+    height: 60px;
+    width: 60px;
+    transform: rotate(94deg);
+    margin-left: -63px;
+}
+
 </style>
 <div id="app">
   <div id="login" class="hidden">
@@ -162,6 +245,9 @@
           <div class="user-info">
               <div class="user-photo" data-role="user-photo"></div>
               <div class="user-name" data-role="user-name"></div>
+              <div class="container">
+                <button class="btn" id="openOverlay">Загрузить ваше фото</button>
+              </div>
           </div>
 
           <div class="user-list-container">
